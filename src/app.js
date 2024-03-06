@@ -45,6 +45,7 @@ app.post("/items", (req, res) => {
 
 app.put("/items/:id", (req, res) => {
     const index = buscaItem(req.params.id);
+    items[index].nome = req.body.nome;
     items[index].valor = req.body.valor;
     res.status(200).json(items[index]);
 });
